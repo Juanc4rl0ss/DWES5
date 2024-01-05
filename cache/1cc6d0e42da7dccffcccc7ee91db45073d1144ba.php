@@ -45,9 +45,9 @@
         <h1>Listado de Jugadores</h1>
         
            
-         @if (!empty($aviso))
-        <div style="background-color:greenyellow; padding:10px; margin-bottom: 15px;">{{ $aviso }}</div>
-         @endif
+         <?php if(!empty($aviso)): ?>
+        <div style="background-color:greenyellow; padding:10px; margin-bottom: 15px;"><?php echo e($aviso); ?></div>
+         <?php endif; ?>
         
         <div class="boton">
             <a href="fcrear.php" class="btn">+ Nuevo Jugador</a>
@@ -60,14 +60,14 @@
                 <th>Dorsal</th>
                 <th>Código de Barras</th>
             </tr>
-            @foreach ($jugadores as $j)
+            <?php $__currentLoopData = $jugadores; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $j): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                    <td>{{ htmlspecialchars($j['nombre']) . ' ' . htmlspecialchars($j['apellidos']) }}</td>
-                    <td>{{ htmlspecialchars($j['posicion']) }}</td>
-                    <td>{{ $j['dorsal'] ? htmlspecialchars($j['dorsal']) : 'Sin Asignar' }}</td>
-                    <td>{{ htmlspecialchars($j['barcode']) }}</td>
+                    <td><?php echo e(htmlspecialchars($j['nombre']) . ' ' . htmlspecialchars($j['apellidos'])); ?></td>
+                    <td><?php echo e(htmlspecialchars($j['posicion'])); ?></td>
+                    <td><?php echo e($j['dorsal'] ? htmlspecialchars($j['dorsal']) : 'Sin Asignar'); ?></td>
+                    <td><?php echo e(htmlspecialchars($j['barcode'])); ?></td>
                 </tr>
-            @endforeach
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </table>
     </div>
 </body>

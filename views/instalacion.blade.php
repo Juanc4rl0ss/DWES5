@@ -1,5 +1,3 @@
-{{-- resources/views/instalacion.blade.php --}}
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,14 +19,14 @@
         }
         .btn {
             padding: 10px 20px;
-            background-color: #4CAF50; /* Verde */
+            background-color: #4CAF50; 
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
             margin-top: 20px;
-            text-decoration: none; /* Quitar subrayado de enlaces */
+            text-decoration: none; 
             display: inline-block;
         }
         .btn:hover {

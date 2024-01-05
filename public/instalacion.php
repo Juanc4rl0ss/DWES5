@@ -1,12 +1,11 @@
 
 <!-- En caso de que no haya jugadores en la base de datos, nos redirige a ésta página
 <?php
+//En éste caso, vamos a emplear el creador de plantillas Blade, por lo que lo asignamos a la clase
+use Philo\Blade\Blade;
 
 //Cargamos el autoload
 require_once __DIR__ . '/../vendor/autoload.php';
-
-//En éste caso, vamos a emplear el creados de plantillas Blade, por lo que lo asignamos a la clase
-use Philo\Blade\Blade;
 
 //Creamos variables,para las carpetas 'views' y 'cache'
 $views = '../views';

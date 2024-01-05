@@ -2,6 +2,8 @@
 
 //Asignamos a una variable,el valor recogido del codigo de barras de la sesión, como ésta plantilla pertenece a una sesión que ya ha sido iniciada, no hace falta ponerlo aquí
 $codigoBarras = $_SESSION['formData']['barcode'] ?? '';
+
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -25,16 +27,19 @@ $codigoBarras = $_SESSION['formData']['barcode'] ?? '';
     </style>
 </head>
 <body>
+        @if (!empty($aviso))
+        <div style="background-color:red; padding:10px; margin-bottom: 15px;">{{ $aviso }}</div>
+         @endif
     <div class="container">
         <h1>Crear Jugador</h1>
         <form action="crearJugador.php"; method="post">
             <div>
                 <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" required>
+                <input type="text" id="nombre" name="nombre" >
             </div>
             <div>
                 <label for="apellidos">Apellidos</label>
-                <input type="text" id="apellidos" name="apellidos" required>
+                <input type="text" id="apellidos" name="apellidos" >
             </div>
             <div>
                 <label for="dorsal">Dorsal</label>
