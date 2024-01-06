@@ -10,7 +10,8 @@ class Conexion {
     private $user = 'root';
     private $pass = '';
     private $charset = 'utf8mb4';
-
+    
+//Método que sirve para poder realizar la conexión
     public function conectar() {
         try {
             $conexion = "mysql:host=" . $this->host . ";dbname=" . $this->db . ";charset=" . $this->charset;

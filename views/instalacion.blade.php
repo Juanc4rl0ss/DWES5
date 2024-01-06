@@ -35,11 +35,9 @@
     </style>
 </head>
 <body>
-    <!-- Ésta página php tan solo tiene un div con un botón, el cual sirve para generar 50 datos para añadir a la base de datos, ya que si estamos aquí,significa que la base de datos estaba vacía de jugadores!-->
     <div class="container">
         <h1>Instalación</h1>
         
-        <!-- Éste botón nos lleva a la página, que crea los datos de jugadores,de manera Random!-->
         <a href="crearDatos.php" class="btn">Instalar Datos de Ejemplo</a>
     </div>
 </body>

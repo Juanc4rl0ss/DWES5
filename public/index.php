@@ -1,6 +1,5 @@
 
 <!-- Clase inicial de la Tarea 5, que consiste en un proyecto de jugadores de futbol
-
 <?php
 
 //Apuntamos a el autoload,para poder tener acceso tal y como está configurado, a las clases de la carpeta src

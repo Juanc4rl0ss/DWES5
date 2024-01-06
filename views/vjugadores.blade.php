@@ -44,7 +44,7 @@
     <div class="container">
         <h1>Listado de Jugadores</h1>
         
-           
+         <!--En caso de que no esté vacía la variable aviso, lo muestra por pantalla!-->
          @if (!empty($aviso))
         <div style="background-color:greenyellow; padding:10px; margin-bottom: 15px;">{{ $aviso }}</div>
          @endif
@@ -65,7 +65,8 @@
                     <td>{{ htmlspecialchars($j['nombre']) . ' ' . htmlspecialchars($j['apellidos']) }}</td>
                     <td>{{ htmlspecialchars($j['posicion']) }}</td>
                     <td>{{ $j['dorsal'] ? htmlspecialchars($j['dorsal']) : 'Sin Asignar' }}</td>
-                    <td>{{ htmlspecialchars($j['barcode']) }}</td>
+                    
+                    <td>{!! $j['imagenCodigoBarras'] !!}</td>
                 </tr>
             @endforeach
         </table>

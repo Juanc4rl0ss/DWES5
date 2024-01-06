@@ -44,7 +44,7 @@
     <div class="container">
         <h1>Listado de Jugadores</h1>
         
-           
+         <!--En caso de que no esté vacía la variable aviso, lo muestra por pantalla!-->
          <?php if(!empty($aviso)): ?>
         <div style="background-color:greenyellow; padding:10px; margin-bottom: 15px;"><?php echo e($aviso); ?></div>
          <?php endif; ?>
@@ -65,7 +65,8 @@
                     <td><?php echo e(htmlspecialchars($j['nombre']) . ' ' . htmlspecialchars($j['apellidos'])); ?></td>
                     <td><?php echo e(htmlspecialchars($j['posicion'])); ?></td>
                     <td><?php echo e($j['dorsal'] ? htmlspecialchars($j['dorsal']) : 'Sin Asignar'); ?></td>
-                    <td><?php echo e(htmlspecialchars($j['barcode'])); ?></td>
+                    
+                    <td><?php echo $j['imagenCodigoBarras']; ?></td>
                 </tr>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </table>

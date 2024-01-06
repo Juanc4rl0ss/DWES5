@@ -4,38 +4,23 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use Milon\Barcode\DNS1D;
 
+//Librería necesaria para la creación del número de código de barras
+use Faker\Factory;
+
+
 function generarBarcode() {
-    // Creamos con un random, hasta 12 numeros
-    $numeroRandom = mt_rand(100000000000, 999999999999);
-
-    // Falta un numero más, que lo calculamos con el metodo de abajo, pasandole el valor ya creado
-    return $numeroRandom . calculoUltimoDigito($numeroRandom);
-}
-
-//Éste método calcula el dígito 13 que necesitamos
-function calculoUltimoDigito($number) {
-    $sum = 0;
     
-    //Lo convertimos en una cadena
-    $number = (string)$number;
-
-    // Sumamos los digitios en posiciones impares
-    for ($i = 0; $i < 12; $i += 2) {
-        $sum += $number[$i];
-    }
-
-    //  Sumamos los digitios en posiciones pares
-    for ($i = 1; $i < 12; $i += 2) {
-        $sum += 3 * $number[$i];
-    }
-
-    // calculamos el digito de verificacion
-    $digigoVerificacion = (10 - ($sum % 10)) % 10;
-
-    return $digigoVerificacion;
+    // Inicializamos Faker
+    $faker = Factory::create();
+    
+    // Creamos el valor del código de barras
+    $barcode = $faker->unique()->ean13;
+    
+    return $barcode;
+   
 }
 
-//Generamos el numero del codigo de barras
+//Pasamos el número del código de barras a una variable
 $codigoBarras = generarBarcode();
 
 //Pasamos el valor a la sesión
